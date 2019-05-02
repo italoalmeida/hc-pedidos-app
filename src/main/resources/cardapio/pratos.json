@@ -1,20 +1,20 @@
 [
   {
-    "nome": "Frango ‡ Parmegiana",
+    "nome": "Frango √† Parmegiana",
     "acompanhamentos": [
       "Spaghetti",
       "Arroz",
-      "Feij„o",
-      "PurÍ de Batatas"
+      "Feij√£o",
+      "Pur√™ de Batatas"
     ],
     "preco": 14.9
   },
   {
-    "nome": "FilÈ de Til·pia",
+    "nome": "Fil√© de Til√°pia",
     "acompanhamentos": [
       "Arroz",
-      "Feij„o",
-      "PurÍ de Batatas",
+      "Feij√£o",
+      "Pur√™ de Batatas",
       "Salada",
       "Alho"
     ],
@@ -23,7 +23,7 @@
   {
     "nome": "Maminha",
     "acompanhamentos": [
-      "Pir„o",
+      "Pir√£o",
       "Arroz Branco",
       "Arroz Integral"
     ],
@@ -33,7 +33,7 @@
     "nome": "Peito de Frango Assado",
     "acompanhamentos": [
       "Arroz",
-      "Feij„o",
+      "Feij√£o",
       "Salada",
       "Molho de Pimenta",
       "Batata"
