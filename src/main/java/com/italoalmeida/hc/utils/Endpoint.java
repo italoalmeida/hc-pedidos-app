@@ -1,5 +1,9 @@
 package com.italoalmeida.hc.utils;
 
+/**
+ * @author Italo Almeida
+ *
+ */
 public interface Endpoint {
 	
 	final String RAIZ = "/";

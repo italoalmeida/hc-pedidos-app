@@ -6,6 +6,10 @@ import java.util.List;
 
 import javax.validation.constraints.NotEmpty;
 
+/**
+ * @author Italo Almeida
+ *
+ */
 public class Pedido implements Serializable {
 
 	private static final long serialVersionUID = 1L;

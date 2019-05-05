@@ -7,17 +7,22 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.italoalmeida.hc.exception.repository.LeituraArquivoJsonException;
-import com.italoalmeida.hc.exception.restcontroller.NenhumPratoEncontradoException;
+import com.italoalmeida.hc.exception.NenhumPratoEncontradoException;
 import com.italoalmeida.hc.model.Prato;
 import com.italoalmeida.hc.service.CardapioService;
 
+/**
+ * @author Italo Almeida
+ *
+ */
 @RestController
 @RequestMapping(value = RAIZ)
+@CrossOrigin
 public class CardapioRestController {
 	
 	@Autowired
@@ -25,7 +30,7 @@ public class CardapioRestController {
 	
 	@GetMapping(CARDAPIO)
 	private ResponseEntity<Object> cardapio() 
-			throws NenhumPratoEncontradoException, LeituraArquivoJsonException {
+			throws NenhumPratoEncontradoException, Exception {
 		
 		List<Prato> cardapio = cardapioService.consultar();
 		

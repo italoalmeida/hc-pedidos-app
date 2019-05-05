@@ -1,5 +1,6 @@
 package com.italoalmeida.hc.service;
 
+import static com.italoalmeida.hc.utils.Constantes.NOME_ARQUIVO_CARDAPIO;
 import static com.italoalmeida.hc.utils.Diretorio.DIRETORIO_ARQUIVOS_CARDAPIO;
 
 import java.util.List;
@@ -7,11 +8,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.italoalmeida.hc.exception.repository.LeituraArquivoJsonException;
-import com.italoalmeida.hc.exception.restcontroller.NenhumPratoEncontradoException;
+import com.italoalmeida.hc.exception.LeituraArquivoJsonException;
+import com.italoalmeida.hc.exception.NenhumPratoEncontradoException;
 import com.italoalmeida.hc.model.Prato;
 import com.italoalmeida.hc.repository.PratoRepository;
 
+/**
+ * @author Italo Almeida
+ *
+ */
 @Service
 public class CardapioServiceImpl implements CardapioService {
 
@@ -22,7 +27,7 @@ public class CardapioServiceImpl implements CardapioService {
 	public List<Prato> consultar() 
 			throws NenhumPratoEncontradoException, LeituraArquivoJsonException {
 		
-		List<Prato> cardapio = pratoRepository.ler(DIRETORIO_ARQUIVOS_CARDAPIO, "pratos");
+		List<Prato> cardapio = pratoRepository.ler(DIRETORIO_ARQUIVOS_CARDAPIO, NOME_ARQUIVO_CARDAPIO);
 		
 		if (cardapio == null || cardapio.isEmpty()) throw new NenhumPratoEncontradoException(); 
 		

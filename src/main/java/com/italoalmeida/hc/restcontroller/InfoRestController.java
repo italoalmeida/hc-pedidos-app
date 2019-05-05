@@ -9,13 +9,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * @author Italo Almeida
+ *
+ */
 @RestController
 @RequestMapping(value = INFO)
 public class InfoRestController {
 	
 	@GetMapping
 	private ResponseEntity<Object> info(HttpServletRequest request) {		
-		// Response
 		return ResponseEntity.ok().body("info");
 	}
 

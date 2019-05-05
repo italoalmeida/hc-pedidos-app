@@ -6,6 +6,10 @@ import java.util.List;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 
+/**
+ * @author Italo Almeida
+ *
+ */
 public class Prato implements Serializable {
 
 	private static final long serialVersionUID = 5015931862546328099L;

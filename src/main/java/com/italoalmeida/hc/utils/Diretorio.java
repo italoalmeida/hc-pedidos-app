@@ -1,5 +1,9 @@
 package com.italoalmeida.hc.utils;
 
+/**
+ * @author Italo Almeida
+ *
+ */
 public interface Diretorio {
 
 	final String DIRETORIO_RAIZ_ARQUIVOS = "src\\main\\resources\\";

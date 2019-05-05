@@ -8,8 +8,9 @@ import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import com.italoalmeida.hc.exception.repository.GravacaoArquivoJsonException;
-import com.italoalmeida.hc.exception.repository.LeituraArquivoJsonException;
+import com.italoalmeida.hc.exception.GravacaoArquivoJsonException;
+import com.italoalmeida.hc.exception.LeituraArquivoJsonException;
+import com.italoalmeida.hc.model.Prato;
 
 /**
  * @author Italo Almeida
@@ -27,7 +28,7 @@ public interface JsonRepository<MODEL> {
 	 * @throws GravacaoArquivoJsonException 
 	 * @throws LeituraArquivoJsonException 
 	 */
-	default List<MODEL> ler(String caminhoArquivo, String nomeArquivo) 
+	default List<Prato> ler(String caminhoArquivo, String nomeArquivo) 
 			throws LeituraArquivoJsonException {
 		
 		// Intancia conversor JSON
@@ -49,22 +50,28 @@ public interface JsonRepository<MODEL> {
 
 	/**
 	 * @param Conteúdo que será gravado em um novo arquivo JSON
+	 * @return código do arquivo para consulta posterior
 	 * @throws LeituraArquivoJsonException 
 	 * @throws GravacaoArquivoJsonException 
 	 */
-	default void gravar(MODEL model, String caminhoArquivo, String prefixoArquivo) 
+	default String gravar(MODEL model, String caminhoArquivo, String prefixoArquivo) 
 			throws GravacaoArquivoJsonException {		
+		
+		// Utiliza o currentTimeMillis como código único do arquivo 
+		String codigoArquivo = String.valueOf(System.currentTimeMillis());
 
 		// Intancia conversor JSON
 		Gson conversorJson = new GsonBuilder().setPrettyPrinting().create();
 		
 		// Compõe o nome do arquivo com as informações necessárias para gravação
-		String nomeCompletoArquivo = caminhoArquivo + prefixoArquivo + System.currentTimeMillis() + EXTENSAO;
+		String nomeCompletoArquivo = caminhoArquivo + prefixoArquivo + codigoArquivo + EXTENSAO;
 		
 		try (FileWriter arquivo = new FileWriter(nomeCompletoArquivo)) {
 			
 			arquivo.write(conversorJson.toJson(model));
 			arquivo.flush();
+			
+			return codigoArquivo;
 			
 		} catch (Exception e) {
 			throw new GravacaoArquivoJsonException();

@@ -30,3 +30,4 @@ HELP.md
 
 ### some JSON files ###
 /src/main/resources/pedidos/*
+!/src/main/resources/pedidos/.gitkeep
