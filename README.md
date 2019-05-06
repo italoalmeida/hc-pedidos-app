@@ -87,7 +87,7 @@ OU
 
 ### URL
 
-  /pedido/:id
+  /pedido/:cod
 
 ### Método:
 
