@@ -16,11 +16,11 @@ public class NenhumPratoEncontradoException extends Exception {
 	}
 	
 	public int getCodigo() {
-		return HttpStatus.NO_CONTENT.value();
+		return HttpStatus.NOT_FOUND.value();
 	}
 	
 	public HttpStatus getHttpStatus() {
-		return HttpStatus.NO_CONTENT;
+		return HttpStatus.NOT_FOUND;
 	}
 
 }

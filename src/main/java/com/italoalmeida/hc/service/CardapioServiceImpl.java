@@ -26,12 +26,17 @@ public class CardapioServiceImpl implements CardapioService {
 	@Override
 	public List<Prato> consultar() 
 			throws NenhumPratoEncontradoException, LeituraArquivoJsonException {
-		
-		List<Prato> cardapio = pratoRepository.ler(DIRETORIO_ARQUIVOS_CARDAPIO, NOME_ARQUIVO_CARDAPIO);
-		
-		if (cardapio == null || cardapio.isEmpty()) throw new NenhumPratoEncontradoException(); 
-		
-		return cardapio;
+		try {
+			
+			List<Prato> cardapio = pratoRepository.ler(DIRETORIO_ARQUIVOS_CARDAPIO, NOME_ARQUIVO_CARDAPIO);
+			
+			if (cardapio == null || cardapio.isEmpty()) throw new NenhumPratoEncontradoException();
+			
+			return cardapio;
+			
+		} catch (Exception e) {
+			throw new NenhumPratoEncontradoException();
+		}		
 	}
 
 }

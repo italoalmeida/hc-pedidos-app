@@ -16,11 +16,11 @@ public class PedidoVazioException extends Exception {
 	}
 	
 	public int getCodigo() {
-		return HttpStatus.BAD_REQUEST.value();
+		return HttpStatus.NOT_ACCEPTABLE.value();
 	}
 	
 	public HttpStatus getHttpStatus() {
-		return HttpStatus.BAD_REQUEST;
+		return HttpStatus.NOT_ACCEPTABLE;
 	}
 
 }
