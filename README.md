@@ -45,7 +45,7 @@ Aplicação backend para pedidos de pratos via API RESTful
 
 ## Fazer pedido
 
-  Salva lista de pratos que compõe o pedido.
+  Salva lista de pratos que compõem o pedido.
 
 ### URL
 
