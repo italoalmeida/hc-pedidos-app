@@ -26,4 +26,4 @@ E depois:
 
 `ng serve`
 
-Digite a url http://localhost:4200/ no seu navegador para visualisar a aplicação.
+Digite a url http://localhost:4200/ no seu navegador para visualizar a aplicação.
